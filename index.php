@@ -3,6 +3,7 @@
 require_once './db.php';
 
 // var_dump($products);
+// echo $products[0]->category;
 
 ?>
 
@@ -34,10 +35,10 @@ require_once './db.php';
             ?>
                 <div class="card" style="width: 18rem; height: auto">
                     <img src="<?= $product->image ?>" class="card-img-top" alt="product image" style="object-size: contain; width: 100%">
-                    <div class="card-body">
+                    <div class="card-body d-flex flex-column gap-4">
                         <h5 class="card-title"><?= $product->name ?></h5>
-                        <p class="card-text"><?= $product->description ?></p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <p class="card-text flex-grow-1"><?= $product->description ?></p>
+                        <a href="#" style="color: rgb(13, 202, 240);" class="fs-3 flex-shrink-1"><span><?= $product->category ?></span></a>
                     </div>
                 </div>
 
