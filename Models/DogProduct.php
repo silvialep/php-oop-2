@@ -12,6 +12,7 @@ class DogProduct extends Product
         $this->setIcon();
     }
 
+    //metodo per sostituire l'icona alla categoria
     public function setIcon()
     {
         $this->category = '<i class="fa-solid fa-dog"></i>';
