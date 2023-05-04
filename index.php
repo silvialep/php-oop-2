@@ -29,17 +29,18 @@ require_once './db.php';
 
     <?php include './Views/Partials/header.php' ?>
 
-    <div style="background-color:aquamarine; overflow: auto">
-        <div class="container d-flex flex-wrap gap-5 justify-content-between pt-5 pb-3 position-relative" style="margin-top: 80px; height: calc(100vh - 230px)">
+    <div style="background-color:aquamarine; overflow: auto;">
+        <div class="container d-flex flex-wrap gap-5 pt-5 position-relative" style="margin-top: 80px; padding-bottom: 200px; height: auto">
             <?php foreach ($products as $product) {
             ?>
-                <div class="card" style="width: 18rem; height: auto">
+                <div class="card shadow p-1 mb-5 bg-white rounded" style="width: 18rem; height: auto">
                     <img src="<?= $product->image ?>" class="card-img-top" alt="product image" style="object-size: contain; width: 100%">
                     <div class="card-body d-flex flex-column gap-4">
-                        <h5 class="card-title"><?= $product->name ?></h5>
+                        <h5 class="card-title fs-2" style="color:brown"><?= $product->name ?></h5>
+                        <span style="color:forestgreen">€ <?= $product->price ?></span>
                         <p class="card-text flex-grow-1"><?= $product->description ?></p>
-                        <div class="card-text d-flex gap-5 fs-3 flex-shrink-1">
-                            <a href=" #" style="color: rgb(13, 202, 240); mr-3" ><span><?= $product->category ?></span></a>
+                        <div class="card-text d-flex align-items-center gap-5 flex-shrink-1">
+                            <a href=" #" class="fs-3" style="color: rgb(13, 202, 240);"><span><?= $product->category ?></span></a>
                             <a href="#" style="color: rgb(13, 202, 240);"><span><?= $product->type ?></span></a>
                         </div>
                     </div>
