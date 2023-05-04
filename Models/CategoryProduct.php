@@ -1,6 +1,6 @@
 <?php
 
-class CatProduct extends Product {
+class CategoryProduct extends Product {
     public $category;
 
     function __construct(string $name, string $price, string $image, string $description, string $category) {
@@ -12,6 +12,11 @@ class CatProduct extends Product {
 
     //metodo per sostituire l'icona alla categoria
     public function setIcon() {
-        $this->category = '<i class="fa-solid fa-cat"></i>';
+        if($this->category == 'Cat') {
+            $this->category = '<i class="fa-solid fa-cat"></i>';
+        }
+        if($this->category == 'Dog') {
+            $this->category = '<i class="fa-solid fa-dog"></i>';
+        }
     }
 }
