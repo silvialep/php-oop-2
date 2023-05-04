@@ -38,7 +38,10 @@ require_once './db.php';
                     <div class="card-body d-flex flex-column gap-4">
                         <h5 class="card-title"><?= $product->name ?></h5>
                         <p class="card-text flex-grow-1"><?= $product->description ?></p>
-                        <a href="#" style="color: rgb(13, 202, 240);" class="fs-3 flex-shrink-1"><span><?= $product->category ?></span></a>
+                        <div class="card-text d-flex gap-5 fs-3 flex-shrink-1">
+                            <a href=" #" style="color: rgb(13, 202, 240); mr-3" ><span><?= $product->category ?></span></a>
+                            <a href="#" style="color: rgb(13, 202, 240);"><span><?= $product->type ?></span></a>
+                        </div>
                     </div>
                 </div>
 
