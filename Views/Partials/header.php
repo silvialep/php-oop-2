@@ -1,4 +1,4 @@
-<header class="position-fixed top-0 w-100">
+<header class="position-fixed top-0 w-100 z-3">
     <nav class="navbar navbar-dark bg-info p-2">
         <div class="container-fluid">
             <a class="navbar-brand text-dark">
