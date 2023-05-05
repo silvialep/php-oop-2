@@ -43,11 +43,32 @@ require_once __DIR__ . './db.php';
                             <p class="card-text flex-grow-1"><?= $product->getDescription() ?></p>
                             <div class="card-text d-flex align-items-center gap-5 flex-shrink-1">
                                 <a href=" #" class="fs-3" style="color: rgb(13, 202, 240);"><span><?= $product->getCategory()->getIcon() ?></span></a>
-                                <!-- <a href="#" style="color: rgb(13, 202, 240);"><span><?= $product->type ?></span></a> -->
+                                <a href="#" style="color: rgb(13, 202, 240);">
+                                    <span>
+                                        <?php
+                                        echo $product->getType();
+                                        // switch (get_class($product)) {
+
+                                            // case 'Food':
+                                            //     echo "Ingredienti: " . $singleProduct->getIngredients();
+                                            //     break;
+
+                                            // case 'Toy':
+                                            //     echo "Materiale: " .  $singleProduct->getMaterial();
+                                            //     break;
+
+                                            // default:
+                                            //     echo "<br>";
+                                            //     break;
+                                        // }
+
+                                        ?>
+                                    </span>
+                                </a>
                             </div>
                         </div>
                     </div>
-    
+
                 <?php
                 }
                 ?>
