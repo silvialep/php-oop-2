@@ -31,7 +31,7 @@ require_once __DIR__ . './db.php';
 
     <div style="background-color:aquamarine; overflow: auto;">
         <div style="margin-top: 100px; padding: 20px 50px 200px; height: auto">
-            <h1>Prodotti in tendenza </h1>
+            <h1>Prodotti in tendenza</h1>
             <div class="container d-flex flex-wrap gap-5 pt-5 position-relative" style="height: auto">
                 <?php foreach ($products as $product) {
                 ?>
@@ -42,39 +42,53 @@ require_once __DIR__ . './db.php';
                             <span style="color:forestgreen">€ <?= $product->getPrice() ?></span>
                             <p class="card-text flex-grow-1"><?= $product->getDescription() ?></p>
                             <div class="card-text d-flex align-items-center gap-5 flex-shrink-1">
-                                <a href=" #" class="fs-3" style="color: rgb(13, 202, 240);"><span><?= $product->getCategory()->getIcon() ?></span></a>
-                                <a href="#" style="color: rgb(13, 202, 240);">
+                                <a href="#" style="color: rgb(13, 202, 240)" class="fs-3"><?= $product->getCategory()->getIcon() ?></a>
+                                <a href="#" style="color: rgb(13, 202, 240)">
+                                <?php
+
+                                switch (get_class($product)) {
+
+                                    case 'Food':
+                                        echo $product->getType();
+                                        break;
+
+                                    case 'Toy':
+                                        echo $product->getType();
+                                        break;
+
+                                    case 'Kennel':
+                                        echo $product->getType();
+                                        break;
+
+                                    case 'Litterbox':
+                                        echo $product->getType();
+                                        break;
+
+                                    case 'ScratchPost':
+                                        echo $product->getType();
+                                        break;
+
+                                    default:
+                                        echo "";
+                                        break;
+                                }
+
+                                ?>
+                                </a>
+                                <a href="#" class="fs-3" style="color: rgb(13, 202, 240)">
                                     <?php
 
                                     switch (get_class($product)) {
-
-                                        case 'Food':
-                                            echo $product->getType();
-                                            break;
-
-                                        case 'Toy':
-                                            echo $product->getType();
-                                            break;
-
-                                        case 'Kennel':
-                                            echo $product->getType();
-                                            break;
-
                                         case 'Litterbox':
-                                            echo $product->getType();
-                                            break;
-
-                                        case 'ScratchPost':
-                                            echo $product->getType();
+                                            echo $product->getClean();
                                             break;
 
                                         default:
-                                            echo "<span>";
+                                            echo "";
                                             break;
                                     }
 
                                     ?>
-                                    <span>
                                 </a>
                             </div>
                         </div>
