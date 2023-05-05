@@ -1,10 +1,10 @@
 <?php
 
-require_once './db.php';
+require_once __DIR__ . './db.php';
 
 // var_dump($products);
 // echo $products[0]->category;
-echo $products[1]->image;
+// echo $products[1]->image;
 
 ?>
 
@@ -30,25 +30,29 @@ echo $products[1]->image;
     <?php include './Views/Partials/header.php' ?>
 
     <div style="background-color:aquamarine; overflow: auto;">
-        <div class="container d-flex flex-wrap gap-5 pt-5 position-relative" style="margin-top: 80px; padding-bottom: 200px; height: auto">
-            <?php foreach ($products as $product) {
-            ?>
-                <div class="card shadow p-1 mb-5 bg-white rounded" style="width: 18rem; height: auto">
-                    <img src="<?= $product->image ?>" class="card-img-top" alt="product image" style="object-size: contain; width: 100%">
-                    <div class="card-body d-flex flex-column gap-4">
-                        <h5 class="card-title fs-2" style="color:brown"><?= $product->name ?></h5>
-                        <span style="color:forestgreen">€ <?= $product->price ?></span>
-                        <p class="card-text flex-grow-1"><?= $product->description ?></p>
-                        <div class="card-text d-flex align-items-center gap-5 flex-shrink-1">
-                            <a href=" #" class="fs-3" style="color: rgb(13, 202, 240);"><span><?= $product->category ?></span></a>
-                            <a href="#" style="color: rgb(13, 202, 240);"><span><?= $product->type ?></span></a>
+        <div style="margin-top: 100px; padding: 20px 50px 200px; height: auto">
+            <h1>Prodotti in tendenza </h1>
+            <div class="container d-flex flex-wrap gap-5 pt-5 position-relative" style="height: auto">
+                <?php foreach ($products as $product) {
+                ?>
+                    <div class="card shadow p-1 mb-5 bg-white rounded" style="width: 18rem; height: auto">
+                        <img src="<?= $product->getImage() ?>" class="card-img-top" alt="product image" style="object-size: contain; width: 100%">
+                        <div class="card-body d-flex flex-column gap-4">
+                            <h5 class="card-title fs-2" style="color:brown"><?= $product->getName() ?></h5>
+                            <span style="color:forestgreen">€ <?= $product->getPrice() ?></span>
+                            <p class="card-text flex-grow-1"><?= $product->getDescription() ?></p>
+                            <div class="card-text d-flex align-items-center gap-5 flex-shrink-1">
+                                <a href=" #" class="fs-3" style="color: rgb(13, 202, 240);"><span><?= $product->getCategory()->getIcon() ?></span></a>
+                                <!-- <a href="#" style="color: rgb(13, 202, 240);"><span><?= $product->type ?></span></a> -->
+                            </div>
                         </div>
                     </div>
-                </div>
+    
+                <?php
+                }
+                ?>
+            </div>
 
-            <?php
-            }
-            ?>
         </div>
     </div>
     <?php include './Views/Partials/footer.php'  ?>
