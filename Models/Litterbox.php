@@ -24,6 +24,11 @@ class Litterbox extends Product {
     }
 
     public function getSizes() {
-        return implode(' x ', $this->sizes);
+        if(count($this->sizes) == 3) {
+            return implode(' x ', $this->sizes);
+
+        } else {
+            throw new Exception("Inserisci tre campi, lunghezza - profondità - altezza");
+        }
     }
 }

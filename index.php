@@ -6,6 +6,15 @@ require_once __DIR__ . './db.php';
 // echo $products[0]->category;
 // echo $products[1]->image;
 
+try {
+    
+    $omegaToilette->getSizes();
+
+} catch (Exception $e) {
+
+    echo $e->getMessage();
+}
+
 ?>
 
 
