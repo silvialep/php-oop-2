@@ -7,6 +7,7 @@ class Category {
         $this->category = $category;
 
         $this->getIcon();
+
     }
 
     // metodo per sostituire l'icona alla categoria
@@ -18,8 +19,13 @@ class Category {
             $this->category = '<i class="fa-solid fa-dog"></i>';
         }
 
+        if($this->category == 'Gift') {
+            $this->category = '<i class="fa-solid fa-gift"></i>';
+        }
+
         return $this->category;
     }
+
 }
 
 
