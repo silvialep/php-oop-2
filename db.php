@@ -18,7 +18,7 @@ $omegaToilette = new Litterbox('Toilette autopulente Omega Paw Roll\'n Clean', '
 
 
 try {
-    $omegaToilette->getClean();
+    $omegaToilette->getClean('bla');
 } catch (Exception $e) {
     echo $e->getMessage();
 }

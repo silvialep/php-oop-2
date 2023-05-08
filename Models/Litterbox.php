@@ -31,4 +31,8 @@ class Litterbox extends Product {
 
         } 
     }
+
+    public function setClean() {
+        return $this->isCleanable;
+    }
 }

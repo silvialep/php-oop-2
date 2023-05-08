@@ -31,7 +31,6 @@ require_once __DIR__ . './db.php';
 </head>
 
 <body>
-    <?php include './Views/Partials/header.php' ?>
 
     <div style="background-color:aquamarine; overflow: auto;">
         <div style="margin-top: 100px; padding: 20px 50px 200px; height: auto">
@@ -84,7 +83,7 @@ require_once __DIR__ . './db.php';
 
                                     switch (get_class($product)) {
                                         case 'Litterbox':
-                                            echo $product->getClean();
+                                            echo $product->getClean($product->setClean());
                                             break;
 
                                         default:
