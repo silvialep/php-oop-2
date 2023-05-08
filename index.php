@@ -5,15 +5,10 @@ require_once __DIR__ . './db.php';
 // var_dump($products);
 // echo $products[0]->category;
 // echo $products[1]->image;
+// var_dump($omegaToilette);
+// var_dump($toiletteSavicNestor);
 
-try {
-    
-    $omegaToilette->getSizes();
 
-} catch (Exception $e) {
-
-    echo $e->getMessage();
-}
 
 ?>
 
